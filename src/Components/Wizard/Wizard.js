@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 export default class Wizard extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ export default class Wizard extends Component {
             state: '',
             zipcode: 0
         }
+        this.handleClick = this.handleClick.bind(this)
     }
 
     handleInput = e => {
@@ -20,6 +22,13 @@ export default class Wizard extends Component {
             [name]: value
         })
     }
+
+    handleClick = () => {
+        let newProduct = this.state
+        axios.put('/api/houses', newProduct).then(res => {this.setState({
+            
+        })})
+    } 
 
     render() {
         return (

@@ -29,7 +29,8 @@ export default class Dashboard extends Component {
                     return (
                         <div key={house.id}>
                             <House 
-                                house={house}/>
+                                house={house}
+                                houses={houses}/>
                         </div>
                     )
                 })}
